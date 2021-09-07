@@ -67,7 +67,7 @@ class ChangeStack {
   void undo() {
     if (canUndo) {
       final changes = _history.removeLast();
-      for (final change in changes) {
+      for (final change in changes.reversed) {
         change.undo();
       }
       _redos.addFirst(changes);
